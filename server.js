@@ -19,9 +19,7 @@ app.post('/strava/token', async (req, res) => {
       body: JSON.stringify({ client_id, client_secret, refresh_token, grant_type: 'refresh_token' })
     });
     res.json(await r.json());
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
+  } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
 app.post('/strava/activities', async (req, res) => {
@@ -32,9 +30,21 @@ app.post('/strava/activities', async (req, res) => {
       headers: { Authorization: `Bearer ${access_token}` }
     });
     res.json(await r.json());
-  } catch (e) {
-    res.status(500).json({ error: e.message });
-  }
+  } catch (e) { res.status(500).json({ error: e.message }); }
+});
+
+app.post('/ai/chat', async (req, res) => {
+  try {
+    const r = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'anthropic-version': '2023-06-01'
+      },
+      body: JSON.stringify(req.body)
+    });
+    res.json(await r.json());
+  } catch (e) { res.status(500).json({ error: e.message }); }
 });
 
 app.get('/health', (req, res) => res.json({ status: 'ok' }));
