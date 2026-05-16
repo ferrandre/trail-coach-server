@@ -3,10 +3,16 @@ const cors = require('cors');
 const fetch = require('node-fetch');
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+app.options('*', cors());
 app.use(express.json());
 
-// Proxy: rinnova il token Strava
 app.post('/strava/token', async (req, res) => {
   const { client_id, client_secret, refresh_token } = req.body;
   if (!client_id || !client_secret || !refresh_token) {
@@ -21,11 +27,10 @@ app.post('/strava/token', async (req, res) => {
     const data = await r.json();
     res.json(data);
   } catch (e) {
-    res.status(500).json({ error: 'Errore Strava token' });
+    res.status(500).json({ error: 'Errore Strava token', detail: e.message });
   }
 });
 
-// Proxy: scarica le attività Strava
 app.post('/strava/activities', async (req, res) => {
   const { access_token, per_page = 60 } = req.body;
   if (!access_token) return res.status(400).json({ error: 'access_token mancante' });
@@ -36,11 +41,10 @@ app.post('/strava/activities', async (req, res) => {
     const data = await r.json();
     res.json(data);
   } catch (e) {
-    res.status(500).json({ error: 'Errore Strava activities' });
+    res.status(500).json({ error: 'Errore Strava activities', detail: e.message });
   }
 });
 
-// Health check
 app.get('/', (req, res) => res.json({ status: 'ok', service: 'trail-coach-server' }));
 
 const PORT = process.env.PORT || 3000;
