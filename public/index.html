@@ -63,8 +63,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Syne',
 .wd-dot.today{box-shadow:0 0 0 2px var(--trail);}
 .wd-label{font-size:9px;color:var(--text3);font-weight:700;}
 .acts-list{display:flex;flex-direction:column;gap:8px;}
-.act-card{background:var(--surface);border:1px solid #1e1e1e;border-radius:var(--radius);padding:13px 15px;display:flex;align-items:center;gap:13px;cursor:pointer;transition:border-color 0.15s;}
-.act-card:active{background:var(--surface2);}
+.act-card{background:var(--surface);border:1px solid #1e1e1e;border-radius:var(--radius);padding:13px 15px;display:flex;align-items:center;gap:13px;}
 .act-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
 .act-icon.run{background:rgba(0,229,122,0.1);}
 .act-icon.trail{background:rgba(255,159,67,0.1);}
@@ -92,12 +91,14 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Syne',
 .empty-icon{font-size:44px;margin-bottom:10px;opacity:0.3;}
 .empty-t{font-size:14px;line-height:1.7;}
 .setup-card{background:var(--surface);border:1px solid #1e1e1e;border-radius:var(--radius);padding:18px;margin-bottom:14px;}
-.setup-card h3{font-size:14px;font-weight:700;margin-bottom:14px;color:var(--text);}
+.setup-card h3{font-size:14px;font-weight:700;margin-bottom:8px;color:var(--text);}
+.setup-card p{font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.6;}
 .inp-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;font-weight:700;}
 .inp{width:100%;padding:11px 13px;background:var(--surface2);border:1px solid #2a2a2a;border-radius:var(--radius-sm);color:var(--text);font-size:13px;font-family:'DM Mono',monospace;outline:none;margin-bottom:12px;}
 .inp:focus{border-color:var(--trail);}
-.save-btn{width:100%;padding:13px;background:var(--trail);color:#000;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:800;font-family:'Syne',sans-serif;cursor:pointer;margin-top:14px;transition:opacity 0.2s;}
+.save-btn{width:100%;padding:13px;background:var(--trail);color:#000;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:800;font-family:'Syne',sans-serif;cursor:pointer;margin-top:4px;transition:opacity 0.2s;}
 .save-btn:active{opacity:0.8;}
+.save-btn.secondary{background:var(--surface3);color:var(--text2);font-size:13px;margin-top:8px;}
 .setup-note{font-size:11px;color:var(--text3);margin-top:10px;line-height:1.7;}
 .server-status{display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--surface2);border-radius:var(--radius-sm);margin-bottom:14px;font-size:12px;}
 .status-dot{width:8px;height:8px;border-radius:50%;background:var(--text3);}
@@ -113,31 +114,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Syne',
 .pd-act{flex:1;}
 .pd-act-t{font-size:13px;color:var(--text);}
 .pd-act-s{font-size:11px;color:var(--text3);margin-top:1px;}
-.chat-wrap{display:flex;flex-direction:column;height:calc(100vh - 116px - var(--safe-top) - var(--safe-bottom));}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-.chip{padding:6px 12px;background:var(--surface2);border:1px solid #2a2a2a;border-radius:20px;font-size:11px;color:var(--text2);cursor:pointer;font-family:'Syne',sans-serif;font-weight:600;transition:all 0.15s;white-space:nowrap;}
-.chip:active{border-color:var(--trail);color:var(--trail);}
-.msgs{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:10px;}
-.msgs::-webkit-scrollbar{display:none;}
-.msg-row{display:flex;gap:8px;margin-bottom:10px;align-items:flex-end;}
-.msg-row.user{flex-direction:row-reverse;}
-.av{width:27px;height:27px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;}
-.av.ai{background:rgba(255,159,67,0.15);border:1px solid rgba(255,159,67,0.3);}
-.av.user{background:var(--surface3);}
-.bubble{max-width:80%;padding:9px 13px;font-size:13px;line-height:1.6;border-radius:16px;word-wrap:break-word;}
-.msg-row.ai .bubble{background:var(--surface2);color:var(--text);border-radius:4px 16px 16px 16px;}
-.msg-row.user .bubble{background:var(--trail);color:#000;font-weight:600;border-radius:16px 4px 16px 16px;}
-.msg-time{font-size:10px;color:var(--text3);margin-top:3px;font-family:'DM Mono',monospace;}
-.typing-b{background:var(--surface2);padding:11px 14px;border-radius:4px 16px 16px 16px;display:flex;gap:4px;align-items:center;}
-.tdot{width:6px;height:6px;border-radius:50%;background:var(--text3);animation:tdot 1.2s infinite;}
-.tdot:nth-child(2){animation-delay:0.2s;}
-.tdot:nth-child(3){animation-delay:0.4s;}
-@keyframes tdot{0%,80%,100%{transform:scale(0.6);opacity:0.3}40%{transform:scale(1);opacity:1}}
-.chat-inp-row{display:flex;gap:8px;padding-top:10px;border-top:1px solid #1a1a1a;background:var(--bg);}
-.chat-inp{flex:1;padding:10px 14px;background:var(--surface2);border:1px solid #2a2a2a;border-radius:24px;color:var(--text);font-size:14px;font-family:'Syne',sans-serif;outline:none;}
-.chat-inp:focus{border-color:var(--trail);}
-.send-btn{width:40px;height:40px;border-radius:50%;background:var(--trail);border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;font-size:17px;transition:transform 0.15s;}
-.send-btn:active{transform:scale(0.9);}
+.export-box{background:var(--surface2);border-radius:var(--radius-sm);padding:12px;font-size:11px;font-family:'DM Mono',monospace;color:var(--text2);line-height:1.8;word-break:break-all;margin-top:12px;display:none;}
 .toast{position:fixed;top:calc(var(--safe-top) + 65px);left:50%;transform:translateX(-50%) translateY(-10px);background:var(--surface2);border:1px solid var(--trail);color:var(--trail);padding:9px 18px;border-radius:20px;font-size:12px;font-weight:700;opacity:0;transition:all 0.3s;pointer-events:none;z-index:999;white-space:nowrap;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 </style>
@@ -151,6 +128,8 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Syne',
     </button>
   </div>
   <div class="scroll">
+
+    <!-- DASHBOARD -->
     <div class="sec active" id="sec-dash">
       <div class="sport-filter">
         <button class="sf active-all" onclick="filterSport('all',this)">🏔 Tutto</button>
@@ -179,31 +158,35 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Syne',
         <div class="empty"><div class="empty-icon">🏔</div><div class="empty-t">Premi Sync Strava<br>per caricare i tuoi allenamenti.</div></div>
       </div>
     </div>
+
+    <!-- PIANO -->
     <div class="sec" id="sec-plan">
       <div class="sec-title">Piano di allenamento</div>
       <div id="plan-container">
-        <div class="empty"><div class="empty-icon">📅</div><div class="empty-t">Nessun piano ancora.<br>Chiedi al Coach di crearne uno!</div></div>
+        <div class="empty"><div class="empty-icon">📅</div><div class="empty-t">Nessun piano ancora.<br>Vai su "Coach" per crearne uno!</div></div>
       </div>
     </div>
+
+    <!-- COACH -->
     <div class="sec" id="sec-coach">
-      <div class="chat-wrap">
-        <div class="chips">
-          <div class="chip" onclick="sendQuick('Analizza i miei allenamenti recenti')">📊 Analisi</div>
-          <div class="chip" onclick="sendQuick('Crea un piano trail running per me')">🏔 Piano trail</div>
-          <div class="chip" onclick="sendQuick('Come uso bici e nuoto per il trail?')">💡 Cross training</div>
-          <div class="chip" onclick="sendQuick('Sono pronto per una gara trail?')">🏁 Check gara</div>
-          <div class="chip" onclick="sendQuick('Come miglioro in salita?')">⛰ Salita</div>
-        </div>
-        <div class="msgs" id="msgs"></div>
-        <div class="chat-inp-row">
-          <input class="chat-inp" id="chat-inp" placeholder="Scrivi al coach..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMsg()}"/>
-          <button class="send-btn" onclick="sendMsg()">↑</button>
-        </div>
+      <div class="setup-card">
+        <h3>📋 Esporta per Claude</h3>
+        <p>Premi il pulsante, incolla il testo in Claude.ai e chiedi di creare o aggiornare il piano.</p>
+        <button class="save-btn" onclick="exportForCoach()">📋 Copia riassunto corse</button>
+        <div class="export-box" id="export-box"></div>
+      </div>
+      <div class="setup-card">
+        <h3>📅 Incolla il piano</h3>
+        <p>Copia il piano che ti dà Claude nel formato "Lun: Corsa 8km" e incollalo qui.</p>
+        <textarea class="inp" id="plan-paste" rows="8" placeholder="Lun: Riposo&#10;Mar: Corsa facile 8km&#10;Mer: Palestra forza gambe&#10;Gio: Trail 12km +400m D+&#10;Ven: Riposo&#10;Sab: Lungo 18km&#10;Dom: Bici recovery 45min"></textarea>
+        <button class="save-btn" onclick="importPlan()">✅ Salva piano</button>
       </div>
     </div>
+
+    <!-- SETUP -->
     <div class="sec" id="sec-setup">
       <div class="sec-title">Connessione Strava</div>
-      <div class="server-status" id="server-status">
+      <div class="server-status">
         <div class="status-dot" id="status-dot"></div>
         <span id="status-text">Verifica server...</span>
       </div>
@@ -216,11 +199,10 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Syne',
         <div class="inp-label">Refresh Token</div>
         <input class="inp" id="inp-rt" type="text" placeholder="eb5c8ac..."/>
         <button class="save-btn" onclick="saveCreds()">Salva e connetti</button>
-        <button class="save-btn" style="margin-top:8px;background:var(--surface3);color:var(--text2);font-size:13px;" onclick="testConnection()">🔍 Testa connessione</button>
-        <div id="debug-out" style="margin-top:10px;font-size:11px;font-family:'DM Mono',monospace;color:var(--text2);line-height:1.8;word-break:break-all;"></div>
-        <div class="setup-note">I dati sono salvati solo sul tuo dispositivo. Il server proxy non conserva nessuna credenziale.</div>
+        <div class="setup-note">I dati sono salvati solo sul tuo dispositivo.</div>
       </div>
     </div>
+
   </div>
   <nav class="nav">
     <button class="nb active" onclick="goTo('dash')" id="nb-dash"><div class="nb-icon">📊</div>Dashboard</button>
@@ -230,12 +212,11 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Syne',
   </nav>
 </div>
 <div class="toast" id="toast"></div>
+
 <script>
-const PROXY = '';
 let acts = JSON.parse(localStorage.getItem('tc_acts')||'[]');
 let plan = JSON.parse(localStorage.getItem('tc_plan')||'null');
 let creds = JSON.parse(localStorage.getItem('tc_creds')||'{}');
-let chatHistory = [];
 let currentFilter = 'all';
 
 function goTo(id){
@@ -246,14 +227,15 @@ function goTo(id){
   document.querySelector('.scroll').scrollTop=0;
   if(id==='dash') renderDash();
   if(id==='plan') renderPlan();
-  if(id==='coach'&&chatHistory.length===0) initChat();
   if(id==='setup'){ loadSetup(); checkServer(); }
 }
+
 function toast(msg,ms=2800){
   const t=document.getElementById('toast');
   t.textContent=msg; t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),ms);
 }
+
 async function checkServer(){
   const dot=document.getElementById('status-dot');
   const txt=document.getElementById('status-text');
@@ -264,6 +246,7 @@ async function checkServer(){
     else throw new Error();
   }catch(e){ dot.className='status-dot err'; txt.textContent='Server non raggiungibile'; }
 }
+
 async function getToken(){
   if(!creds.clientId||!creds.clientSecret||!creds.refreshToken){
     toast('⚙️ Configura le credenziali'); goTo('setup'); return null;
@@ -276,8 +259,9 @@ async function getToken(){
     const d=await r.json();
     if(d.access_token){ creds.refreshToken=d.refresh_token||creds.refreshToken; localStorage.setItem('tc_creds',JSON.stringify(creds)); return d.access_token; }
     toast('❌ Token non valido'); return null;
-  }catch(e){ toast('❌ Errore server: '+e.message); return null; }
+  }catch(e){ toast('❌ Errore: '+e.message); return null; }
 }
+
 async function syncStrava(){
   const btn=document.getElementById('sync-btn'), lbl=document.getElementById('sync-label');
   btn.classList.add('syncing'); lbl.textContent='Sync...';
@@ -294,15 +278,16 @@ async function syncStrava(){
       const km=parseFloat((a.distance/1000).toFixed(2));
       const min=Math.round(a.moving_time/60);
       const pace=km>0?parseFloat((min/km).toFixed(2)):0;
-      return {id:a.id,date:a.start_date_local.split('T')[0],name:a.name,strava_type:a.type,km,min,pace,heartrate:a.average_heartrate||null,elevGain:Math.round(a.total_elevation_gain||0),calories:a.calories||null};
+      return {id:a.id,date:a.start_date_local.split('T')[0],name:a.name,strava_type:a.type,km,min,pace,heartrate:a.average_heartrate||null,elevGain:Math.round(a.total_elevation_gain||0)};
     });
     localStorage.setItem('tc_acts',JSON.stringify(acts));
     const runs=acts.filter(a=>['run','trail'].includes(sportOf(a))).length;
-    toast('✅ '+acts.length+' attività caricate! ('+runs+' corse)');
+    toast('✅ '+acts.length+' attività! ('+runs+' corse)');
     renderDash();
   }catch(e){ toast('❌ '+e.message); }
   finally{ btn.classList.remove('syncing'); lbl.textContent='Sync Strava'; }
 }
+
 function sportOf(a){
   const t=(a.strava_type||'').toLowerCase();
   if(t.includes('trail')) return 'trail';
@@ -316,8 +301,15 @@ const sportEmoji={run:'🏃',trail:'⛰',bike:'🚴',swim:'🏊',gym:'🏋',othe
 const sportColor={run:'var(--run)',trail:'var(--trail)',bike:'var(--bike)',swim:'var(--swim)',gym:'var(--gym)',other:'var(--text2)'};
 const sportLabel={run:'Corsa',trail:'Trail',bike:'Ciclismo',swim:'Nuoto',gym:'Palestra',other:'Altro'};
 const badgeClass={run:'b-run',trail:'b-trail',bike:'b-bike',swim:'b-swim',gym:'b-gym',other:'b-gym'};
-function filterSport(sport,el){ currentFilter=sport; document.querySelectorAll('.sf').forEach(b=>b.className='sf'); el.className='sf active-'+sport; renderDash(); }
+
+function filterSport(sport,el){
+  currentFilter=sport;
+  document.querySelectorAll('.sf').forEach(b=>b.className='sf');
+  el.className='sf active-'+sport;
+  renderDash();
+}
 function filteredActs(){ return currentFilter==='all'?acts:acts.filter(a=>sportOf(a)===currentFilter); }
+
 function renderDash(){
   const list=filteredActs();
   const onlyKm=['run','trail','bike'];
@@ -347,17 +339,47 @@ function renderDash(){
   if(!list.length){ el.innerHTML='<div class="empty"><div class="empty-icon">🏔</div><div class="empty-t">Nessuna attività.<br>Premi Sync Strava!</div></div>'; return; }
   el.innerHTML=list.slice(0,20).map(a=>{ const sp=sportOf(a); const d=new Date(a.date); const ds=d.toLocaleDateString('it-IT',{day:'numeric',month:'short'}); let mainVal='',mainSub=''; if(sp==='gym'){ mainVal=a.min+'<span style="font-size:11px">min</span>'; mainSub='sessione'; } else { const m=Math.floor(a.pace),s=Math.round((a.pace-m)*60); mainVal=(a.pace>0?m+':'+(s<10?'0'+s:s):'—'); mainSub='min/km'; } let meta=ds+' · '+(a.km>0?a.km+' km · ':'')+a.min+' min'; if(a.heartrate) meta+=' · ♥ '+Math.round(a.heartrate); if(a.elevGain>5) meta+=' · ↑'+a.elevGain+'m'; return '<div class="act-card"><div class="act-icon '+sp+'">'+(sportEmoji[sp]||'💪')+'</div><div class="act-info"><div class="act-name">'+a.name+'</div><div class="act-meta">'+meta+'</div><span class="act-badge '+(badgeClass[sp]||'b-gym')+'">'+(sportLabel[sp]||'Altro')+'</span></div><div class="act-right"><div class="act-main">'+mainVal+'</div><div class="act-sub">'+mainSub+'</div></div></div>'; }).join('');
 }
-function loadSetup(){ if(creds.clientId) document.getElementById('inp-cid').value=creds.clientId; if(creds.clientSecret) document.getElementById('inp-cs').value=creds.clientSecret; if(creds.refreshToken) document.getElementById('inp-rt').value=creds.refreshToken; }
-async function testConnection(){
-  const out=document.getElementById('debug-out'); out.textContent='';
-  const log=msg=>{ out.textContent+=msg+'\n'; };
-  log('1. clientId: '+(creds.clientId||'❌ mancante'));
-  log('   secret: '+(creds.clientSecret?creds.clientSecret.slice(0,6)+'...':'❌'));
-  log('   token: '+(creds.refreshToken?creds.refreshToken.slice(0,6)+'...':'❌'));
-  log('2. Test server...');
-  try{ const r=await fetch('/health'); const d=await r.json(); log('   '+JSON.stringify(d)); }catch(e){ log('   ❌ '+e.message); return; }
-  log('3. Test Strava token...');
-  try{ const r=await fetch('/strava/token',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({client_id:creds.clientId,client_secret:creds.clientSecret,refresh_token:creds.refreshToken})}); const d=await r.json(); if(d.access_token){ log('   ✅ OK: '+d.access_token.slice(0,8)+'...'); } else { log('   ❌ '+JSON.stringify(d)); } }catch(e){ log('   ❌ '+e.message); }
+
+function getSummary(){
+  if(!acts.length) return 'Nessuna attività caricata.';
+  const runs=acts.filter(a=>['run','trail'].includes(sportOf(a)));
+  const trails=acts.filter(a=>sportOf(a)==='trail');
+  const bikes=acts.filter(a=>sportOf(a)==='bike');
+  const swims=acts.filter(a=>sportOf(a)==='swim');
+  const gym=acts.filter(a=>sportOf(a)==='gym');
+  const totalRunKm=runs.reduce((s,a)=>s+a.km,0).toFixed(1);
+  const avgPace=runs.length?(runs.reduce((s,a)=>s+a.pace,0)/runs.length).toFixed(2):null;
+  const totalElev=trails.reduce((s,a)=>s+a.elevGain,0);
+  const last5=acts.slice(0,5).map(a=>a.date+' '+sportLabel[sportOf(a)]+' '+(a.km>0?a.km+'km ':' ')+a.min+'min'+(a.elevGain>10?' +'+a.elevGain+'m':'')).join('\n');
+  return 'Attività totali: '+acts.length+'\nCorse: '+runs.length+' ('+totalRunKm+'km, '+trails.length+' trail, '+totalElev+'m D+ tot)\nBici: '+bikes.length+'\nNuoto: '+swims.length+'\nPalestra: '+gym.length+'\nPasso medio corsa: '+(avgPace||'N/A')+' min/km\n\nUltime 5 attività:\n'+last5;
+}
+
+function exportForCoach(){
+  const text='Ecco i miei allenamenti recenti da Strava:\n\n'+getSummary()+'\n\nPuoi aggiornare il mio piano di allenamento trail?';
+  const box=document.getElementById('export-box');
+  navigator.clipboard.writeText(text)
+    .then(()=>{ toast('✅ Copiato! Incollalo in Claude.ai'); box.style.display='none'; })
+    .catch(()=>{ box.style.display='block'; box.textContent=text; toast('📋 Seleziona e copia il testo qui sotto'); });
+}
+
+function importPlan(){
+  const text=document.getElementById('plan-paste').value.trim();
+  if(!text){ toast('⚠️ Incolla prima il piano'); return; }
+  const lines=text.split('\n').filter(l=>l.trim()&&l.includes(':'));
+  const days=lines.map(l=>{ const idx=l.indexOf(':'); const name=l.slice(0,idx).trim(); const activity=l.slice(idx+1).trim(); const low=activity.toLowerCase(); const type=low.includes('riposo')?'rest':low.includes('trail')?'trail':low.includes('bici')||low.includes('bike')?'bike':low.includes('nuoto')?'swim':low.includes('palestra')||low.includes('forza')?'gym':low.includes('gara')?'race':'run'; return {name,activity,detail:'',type}; });
+  if(!days.length){ toast('❌ Formato non riconosciuto'); return; }
+  plan={title:'Piano personalizzato',weeks:4,days};
+  localStorage.setItem('tc_plan',JSON.stringify(plan));
+  renderPlan();
+  toast('✅ Piano salvato!');
+  document.getElementById('plan-paste').value='';
+  goTo('plan');
+}
+
+function loadSetup(){
+  if(creds.clientId) document.getElementById('inp-cid').value=creds.clientId;
+  if(creds.clientSecret) document.getElementById('inp-cs').value=creds.clientSecret;
+  if(creds.refreshToken) document.getElementById('inp-rt').value=creds.refreshToken;
 }
 function saveCreds(){
   const cid=document.getElementById('inp-cid').value.trim();
@@ -369,20 +391,13 @@ function saveCreds(){
   toast('✅ Salvato!');
   setTimeout(()=>syncStrava(),400);
 }
+
 function renderPlan(){
   if(!plan) return;
   const dotStyle={run:'background:var(--run)',trail:'background:var(--trail)',bike:'background:var(--bike)',swim:'background:var(--swim)',gym:'background:var(--gym)',rest:'background:var(--surface3)',race:'background:var(--red)'};
   document.getElementById('plan-container').innerHTML='<div class="plan-card"><div class="plan-hdr"><span class="plan-hdr-t">'+(plan.title||'Piano')+'</span><span class="plan-hdr-s">'+(plan.weeks||4)+' settimane</span></div>'+plan.days.map(d=>'<div class="plan-day"><div class="pd-name">'+d.name+'</div><div class="pd-dot" style="'+(dotStyle[d.type]||dotStyle.rest)+'"></div><div class="pd-act"><div class="pd-act-t">'+d.activity+'</div>'+(d.detail?'<div class="pd-act-s">'+d.detail+'</div>':'')+'</div></div>').join('')+'</div>';
 }
-const SYSTEM=`Sei un coach di running e trail running esperto che parla italiano. Specializzato in trail running, usi bici, nuoto e palestra come cross-training. Stile: diretto, tecnico, incoraggiante. Max 200 parole.\n\nQuando crei un piano includi SEMPRE alla fine:\n[PIANO]\nGIORNI:Lun:Riposo|Mar:Corsa facile 8km|Mer:Palestra forza gambe|Gio:Trail 12km +400m D+|Ven:Riposo|Sab:Lungo 18km|Dom:Bici recovery 45min`;
-function getSummary(){ if(!acts.length) return 'Nessuna attività caricata.'; const runs=acts.filter(a=>['run','trail'].includes(sportOf(a))); const trails=acts.filter(a=>sportOf(a)==='trail'); const bikes=acts.filter(a=>sportOf(a)==='bike'); const swims=acts.filter(a=>sportOf(a)==='swim'); const gym=acts.filter(a=>sportOf(a)==='gym'); const totalRunKm=runs.reduce((s,a)=>s+a.km,0).toFixed(1); const avgPace=runs.length?(runs.reduce((s,a)=>s+a.pace,0)/runs.length).toFixed(2):null; const totalElev=trails.reduce((s,a)=>s+a.elevGain,0); const last5=acts.slice(0,5).map(a=>a.date+' '+sportLabel[sportOf(a)]+' '+(a.km>0?a.km+'km ':' ')+a.min+'min'+(a.elevGain>10?' +'+a.elevGain+'m':'')).join('; '); return 'Atleta: '+acts.length+' attività — '+runs.length+' corse ('+totalRunKm+'km, '+trails.length+' trail, '+totalElev+'m D+), '+bikes.length+' bici, '+swims.length+' nuoto, '+gym.length+' palestra. Passo medio: '+(avgPace||'N/A')+' min/km. Ultime 5: '+last5; }
-function initChat(){ addMsg('ai','Ciao! Sono il tuo coach 🏔\n\nHo accesso a tutti i tuoi allenamenti Strava. Sono specializzato in trail running e uso bici, nuoto e palestra per farti migliorare in montagna.\n\nCosa vuoi lavorare oggi?'); }
-function addMsg(role,text){ const el=document.getElementById('msgs'); const time=new Date().toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'}); const div=document.createElement('div'); div.className='msg-row '+role; div.innerHTML='<div class="av '+role+'">'+(role==='ai'?'🤖':'👤')+'</div><div><div class="bubble">'+text.replace(/\n/g,'<br>')+'</div><div class="msg-time">'+time+'</div></div>'; el.appendChild(div); el.scrollTop=el.scrollHeight; chatHistory.push({role:role==='ai'?'assistant':'user',content:text}); }
-function showTyping(){ const el=document.getElementById('msgs'); const d=document.createElement('div'); d.className='msg-row ai'; d.id='typing'; d.innerHTML='<div class="av ai">🤖</div><div class="typing-b"><div class="tdot"></div><div class="tdot"></div><div class="tdot"></div></div>'; el.appendChild(d); el.scrollTop=el.scrollHeight; }
-function removeTyping(){ const e=document.getElementById('typing'); if(e) e.remove(); }
-function parsePlan(text){ if(!text.includes('[PIANO]')) return null; const line=text.split('\n').find(l=>l.startsWith('GIORNI:')); if(!line) return null; const parts=line.replace('GIORNI:','').split('|'); const days=parts.map(p=>{ const idx=p.indexOf(':'); const name=p.slice(0,idx); const activity=p.slice(idx+1); const low=activity.toLowerCase(); const type=low.includes('riposo')?'rest':low.includes('trail')?'trail':low.includes('bici')||low.includes('bike')?'bike':low.includes('nuoto')?'swim':low.includes('palestra')||low.includes('forza')?'gym':low.includes('gara')?'race':'run'; return {name,activity,detail:'',type}; }); return {title:'Piano trail integrato',weeks:4,days}; }
-async function sendMsg(){ const inp=document.getElementById('chat-inp'); const text=inp.value.trim(); if(!text) return; inp.value=''; addMsg('user',text); showTyping(); const context='\n\nDATI ATLETA: '+getSummary(); const msgs=[...chatHistory.slice(-12,-1),{role:'user',content:text+(chatHistory.length<=2?context:'')}]; try{ const res=await fetch('/ai/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,system:SYSTEM+context,messages:msgs})}); const data=await res.json(); removeTyping(); const reply=data.content?.[0]?.text||'Errore.'; const clean=reply.split('[PIANO]')[0].trim(); addMsg('ai',clean); const p=parsePlan(reply); if(p){ plan=p; localStorage.setItem('tc_plan',JSON.stringify(plan)); setTimeout(()=>addMsg('ai','✅ Piano salvato! Vai su "Piano" per vederlo.'),500); } }catch(e){ removeTyping(); addMsg('ai','Errore di connessione. Riprova.'); } }
-function sendQuick(t){ document.getElementById('chat-inp').value=t; sendMsg(); }
+
 renderDash();
 if(plan) renderPlan();
 if(!creds.clientId) setTimeout(()=>goTo('setup'),400);
